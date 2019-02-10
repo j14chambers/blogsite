@@ -1,0 +1,29 @@
+---
+layout: post
+
+---
+
+<html>
+	<head>
+		<title>{{ site.title}}</title>
+	</head>
+	<body>
+		<header>
+			{% include header-text.html color="blue" %}
+		</header>
+		
+		<h1>This is a Post</h1>
+		<hr>
+		<h3>{{page.author}}</h3>
+
+		{{ content }}
+		
+		<hr>
+		<br>
+		{% for post in site.posts %}
+			<li><a style="{% if page.url == post.url %}color:red;{%endif%}" href="{{ post.url}}">{{post.title}}</a></li>
+		{% endfor %}
+	</body>
+</html>
+
+
